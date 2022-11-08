@@ -19,9 +19,11 @@ class BiCycle {
 // Adapter for bicycle to make it compatible with Driver class
 class BiCycleAdapter implements Vehicle {
     BiCycle bicycle;
+
     BiCycleAdapter(BiCycle bicycle) {
         this.bicycle = bicycle;
     }
+
     public void drive() {
         bicycle.peddle();
     }
@@ -34,8 +36,7 @@ class Driver {
 }
 
 public class AdapterExample {
-    public static void main (String[] args) throws java.lang.Exception
-	{
+    public static void main(String[] args) throws java.lang.Exception {
         BiCycle bicycle = new BiCycle();
 
         Driver driver = new Driver();

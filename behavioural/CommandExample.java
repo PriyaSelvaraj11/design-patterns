@@ -10,7 +10,8 @@ package command;
  * Command interface - declares what each concrete command should implement
  * Contrete command class - defines the respective command action
  * Invoker class - Gets the command class as input and executes when needed
- * Client code - creates the invoker objects and concrete command objects and manipulates them
+ * Client code - creates the invoker objects and concrete command objects and
+ * manipulates them
  */
 
 // common interface for all commands
@@ -24,6 +25,7 @@ class SaveCommand implements Command {
         System.out.println("save command executing..");
     }
 }
+
 // concrete command class 2
 class CloseCommand implements Command {
     public void execute() {

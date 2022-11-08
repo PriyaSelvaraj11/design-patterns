@@ -2,11 +2,13 @@ package facade;
 
 class DetergentHolderDispenser {
     int detergentInMl;
+
     DetergentHolderDispenser(int detergentInMl) {
         this.detergentInMl = detergentInMl;
     }
+
     public void dispenseDetergent() {
-        System.out.println("Dispensing detergent of "+ detergentInMl + " ml.");
+        System.out.println("Dispensing detergent of " + detergentInMl + " ml.");
     }
 }
 
@@ -18,22 +20,24 @@ class WashAction {
 
 class RinseAction {
     public static void rinse() {
-         System.out.println("rinsing clothes");
+        System.out.println("rinsing clothes");
     }
 }
 
 class SpinAction {
     public static void spin() {
-         System.out.println("spinning to remove excess water");
+        System.out.println("spinning to remove excess water");
     }
 }
 
-// Facade class that hides the internal steps of washing machine 
+// Facade class that hides the internal steps of washing machine
 class WashingMachine {
     DetergentHolderDispenser detergentHolderDispenser;
+
     WashingMachine(int detergentInMl) {
         detergentHolderDispenser = new DetergentHolderDispenser(detergentInMl);
     }
+
     public void start() {
         detergentHolderDispenser.dispenseDetergent();
         WashAction.wash();
@@ -45,15 +49,14 @@ class WashingMachine {
 
 // start of client code
 public class FacadeExample {
-    public static void main (String[] args) throws java.lang.Exception
-	{
-        WashingMachine washingMachine =  new WashingMachine(10);
+    public static void main(String[] args) throws java.lang.Exception {
+        WashingMachine washingMachine = new WashingMachine(10);
         washingMachine.start();
     }
 }
-//end of client code
+// end of client code
 
-//OUTPUT
+// OUTPUT
 // Dispensing detergent of 10 ml.
 // washing clothes
 // rinsing clothes

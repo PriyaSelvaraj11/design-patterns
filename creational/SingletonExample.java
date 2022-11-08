@@ -3,16 +3,18 @@ package singleton;
 class GovernmentA {
     private static GovernmentA instance;
     public String presidentName;
+
     // making the constructor private
     private GovernmentA(String presidentName) {
-    	 // The following code emulates slow initialization.
+        // The following code emulates slow initialization.
         try {
             Thread.sleep(1000);
         } catch (InterruptedException ex) {
             ex.printStackTrace();
         }
-		 this.presidentName = presidentName;
+        this.presidentName = presidentName;
     }
+
     public static GovernmentA getInstance(String presidentName) {
         if (instance == null) {
             instance = new GovernmentA(presidentName);
@@ -27,7 +29,7 @@ class GovernmentB {
     public String presidentName;
 
     private GovernmentB(String presidentName) {
-    	 // The following code emulates slow initialization.
+        // The following code emulates slow initialization.
         try {
             Thread.sleep(1000);
         } catch (InterruptedException ex) {
@@ -35,12 +37,13 @@ class GovernmentB {
         }
         this.presidentName = presidentName;
     }
+
     public static GovernmentB getInstance(String presidentName) {
         GovernmentB result = instance;
         if (result != null) {
             return result;
         }
-        synchronized(GovernmentB.class) {
+        synchronized (GovernmentB.class) {
             if (instance == null) {
                 instance = new GovernmentB(presidentName);
             }

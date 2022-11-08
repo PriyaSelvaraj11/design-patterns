@@ -27,6 +27,7 @@ class Car {
 // Flyweight class which stores some of the attributes of Car class
 class CarType {
     protected String name;
+
     CarType(String name) {
         this.name = name;
     }
@@ -36,7 +37,7 @@ class CarType {
     }
 
     public void manufacture(int id) {
-        System.out.println("manufacturing car of type: "+ name +" with id: "+ id);
+        System.out.println("manufacturing car of type: " + name + " with id: " + id);
     }
 }
 
@@ -57,8 +58,7 @@ class CarFactory {
 class CarDealer {
     private List<Car> cars = new ArrayList<>();
 
-
-    public void manufactureCar(int id , String name) {
+    public void manufactureCar(int id, String name) {
         CarType type = CarFactory.getCarType(name);
         Car car = new Car(id, type);
         cars.add(car);
@@ -66,14 +66,14 @@ class CarDealer {
 
     public void deliverCars() {
         for (Car car : cars) {
-            System.out.println("Delivering car with id: "+ car.getId() + " type: "+ car.getType());
+            System.out.println("Delivering car with id: " + car.getId() + " type: " + car.getType());
         }
     }
 }
+
 // start of client code
 public class FlyweightExample {
-    public static void main (String[] args) throws java.lang.Exception
-	{
+    public static void main(String[] args) throws java.lang.Exception {
         CarDealer carDealer = new CarDealer();
         carDealer.manufactureCar(1, "suv");
         carDealer.manufactureCar(2, "suv");
@@ -84,7 +84,7 @@ public class FlyweightExample {
 
     }
 }
-//end of client code
+// end of client code
 
 // OUTPUT
 // Delivering car with id: 1 type: suv

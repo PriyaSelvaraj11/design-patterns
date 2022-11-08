@@ -6,13 +6,14 @@ package strategy;
  * 
  * Naive solution: Add all the modes of payments in the main Order class
  * 
- * Design pattern solution: Define each strategy as a class and 
+ * Design pattern solution: Define each strategy as a class and
  * pass the required payment mode object to order class
  * 
  * Strategy interface - declares methods that each strategy should define
- * Concrete strategy class - declares methods that context class uses to execute a strategy
+ * Concrete strategy class - declares methods that context class uses to execute
+ * a strategy
  * Order Context class - maintains one reference to concrete strategy class
- *                       and invokes it when needed
+ * and invokes it when needed
  * Client - create a strategy object and pass to order object.
  */
 
@@ -24,7 +25,7 @@ interface PaymentStrategy {
 // concrete strategy class 1
 class PayByDebitCard implements PaymentStrategy {
     public void pay(int amount) {
-        System.out.println("amount to be paid: "+ amount);
+        System.out.println("amount to be paid: " + amount);
         System.out.println("getting debit card details and processing verification...");
         System.out.println("payment verified with debit card");
         System.out.println("----");
@@ -32,9 +33,9 @@ class PayByDebitCard implements PaymentStrategy {
 }
 
 // concrete strategy class 2
-class PayByCreditCard implements PaymentStrategy{
+class PayByCreditCard implements PaymentStrategy {
     public void pay(int amount) {
-        System.out.println("amount to be paid: "+ amount);
+        System.out.println("amount to be paid: " + amount);
         System.out.println("getting credit card details and processing verification...");
         System.out.println("payment verified with credit card");
         System.out.println("----");
@@ -44,9 +45,11 @@ class PayByCreditCard implements PaymentStrategy{
 // Order context class
 class Order {
     int amount;
+
     Order(int amount) {
         this.amount = amount;
     }
+
     public void processOrder(PaymentStrategy strategy) {
         strategy.pay(this.amount);
     }
@@ -63,7 +66,6 @@ public class StrategyExample {
     }
 }
 // end of client code
-
 
 // OUTPUT
 // amount to be paid: 100

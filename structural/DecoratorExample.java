@@ -13,10 +13,12 @@ class BasicCar implements Car {
 // Base decorator class
 class CarDecorator implements Car {
     protected Car car;
+
     CarDecorator(Car car) {
         this.car = car;
     }
-    public void assemble () {
+
+    public void assemble() {
         this.car.assemble();
     }
 }
@@ -25,7 +27,8 @@ class HybridCar extends CarDecorator {
     HybridCar(Car car) {
         super(car);
     }
-    public void assemble () {
+
+    public void assemble() {
         super.assemble();
         System.out.println(" adding hybrid engine!!!");
     }
@@ -35,7 +38,8 @@ class AutomaticCar extends CarDecorator {
     AutomaticCar(Car car) {
         super(car);
     }
-    public void assemble () {
+
+    public void assemble() {
         super.assemble();
         System.out.println(" adding auto gear!!!");
     }
@@ -43,14 +47,13 @@ class AutomaticCar extends CarDecorator {
 
 // start of client code
 public class DecoratorExample {
-    public static void main (String[] args) throws java.lang.Exception
-	{
+    public static void main(String[] args) throws java.lang.Exception {
         Car hybridCar = new HybridCar(new BasicCar());
-		hybridCar.assemble();
+        hybridCar.assemble();
         System.out.println("-------");
-		
-		Car hybridAutoCar = new AutomaticCar(new HybridCar(new BasicCar()));
-		hybridAutoCar.assemble();
+
+        Car hybridAutoCar = new AutomaticCar(new HybridCar(new BasicCar()));
+        hybridAutoCar.assemble();
     }
 }
 // end of client code

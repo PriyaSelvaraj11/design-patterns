@@ -4,18 +4,22 @@ import java.util.*;
 
 interface Product {
     public String getDescription();
+
     public int getPrice();
 }
 
 class BaseProduct implements Product {
     protected int price;
     protected String description = "";
+
     BaseProduct(int price) {
         this.price = price;
-    }    
+    }
+
     public String getDescription() {
         return this.description;
     }
+
     public int getPrice() {
         return this.price;
     }
@@ -68,22 +72,19 @@ class Landline extends BaseProduct {
 
 // start of client code
 public class CompositeExample {
-    public static void main (String[] args) throws java.lang.Exception
-	{
-        // client treats base product and composite product getPrice() method in 
+    public static void main(String[] args) throws java.lang.Exception {
+        // client treats base product and composite product getPrice() method in
         // similar way
         Landline landline = new Landline(50);
-        System.out.println("Landline price: "+ landline.getPrice());
+        System.out.println("Landline price: " + landline.getPrice());
 
         Mobile mobile = new Mobile(100);
         Earphone earphone = new Earphone(10);
-        PackingBox packingBox =  new PackingBox(10);
+        PackingBox packingBox = new PackingBox(10);
         packingBox.addProduct(mobile);
         packingBox.addProduct(earphone);
-        System.out.println("Packing box total price: "+ packingBox.getPrice());
-        
+        System.out.println("Packing box total price: " + packingBox.getPrice());
 
-		
     }
 }
 // end of client code
