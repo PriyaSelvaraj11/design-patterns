@@ -1,6 +1,6 @@
+package composite;
+
 import java.util.*;
-import java.lang.*;
-import java.io.*;
 
 interface Product {
     public String getDescription();
@@ -67,7 +67,7 @@ class Landline extends BaseProduct {
 }
 
 // start of client code
-class Main {
+public class CompositeExample {
     public static void main (String[] args) throws java.lang.Exception
 	{
         // client treats base product and composite product getPrice() method in 

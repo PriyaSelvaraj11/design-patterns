@@ -1,7 +1,4 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
-
+package singleton;
 
 class GovernmentA {
     private static GovernmentA instance;
@@ -52,7 +49,8 @@ class GovernmentB {
     }
 }
 
-public class Main {
+// start of client code
+public class SingletonExample {
     public static void main(String[] args) {
         System.out.println("If you see the same presidentName, then government instance was reused" + "\n" +
                 "If you see different presidentNames, then 2 instances of government were created");
@@ -78,3 +76,4 @@ public class Main {
         }
     }
 }
+// end of client code

@@ -1,6 +1,17 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+package command;
+
+/**
+ * Problem: Build a application which supports save and close actions.
+ * The actions can be invoked in different ways -
+ * by pressing a button or by shortcut keys in keyboard
+ * 
+ * Solution: Build Save and Close actions as command classes
+ * 
+ * Command interface - declares what each concrete command should implement
+ * Contrete command class - defines the respective command action
+ * Invoker class - Gets the command class as input and executes when needed
+ * Client code - creates the invoker objects and concrete command objects and manipulates them
+ */
 
 // common interface for all commands
 interface Command {
@@ -20,7 +31,7 @@ class CloseCommand implements Command {
     }
 }
 
-
+// Invoker class 1
 class Button {
     String name;
     Command command;
@@ -35,6 +46,7 @@ class Button {
     }
 }
 
+// Invoker class 2
 class Shortcut {
     String name;
     Command command;
@@ -49,7 +61,8 @@ class Shortcut {
     }
 }
 
-public class Main {
+// start of client code
+public class CommandExample {
     public static void main(String[] args) {
         Command closeCommand = new CloseCommand();
         Command saveCommand = new SaveCommand();
@@ -67,6 +80,7 @@ public class Main {
         closeShortcut.invoke();
     }
 }
+// end of client code
 
 // OUTPUT:
 // save command executing..

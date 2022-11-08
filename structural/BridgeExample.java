@@ -1,6 +1,4 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+package bridge;
 
 interface Device {
     public boolean isEnabled(); 
@@ -64,7 +62,7 @@ class Remote {
 }
 
 // start of client code
-class Main {
+public class BridgeExample {
     public static void main (String[] args) throws java.lang.Exception
 	{
         Remote tvRemote = new Remote(new TV());

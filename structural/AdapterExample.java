@@ -1,6 +1,4 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+package adapter;
 
 interface Vehicle {
     public void drive();
@@ -35,7 +33,7 @@ class Driver {
     }
 }
 
-class Main {
+public class AdapterExample {
     public static void main (String[] args) throws java.lang.Exception
 	{
         BiCycle bicycle = new BiCycle();

@@ -1,6 +1,4 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+package prototype;
 
 enum CakeShape {
     ROUND, SQUARE, RECTANGLE
@@ -82,7 +80,7 @@ class CupCake {
 }
 
 // start of client code
-class Main {
+public class PrototypeExample {
     public static void main (String[] args) throws java.lang.Exception
 	{
         // cake clone example
@@ -109,3 +107,19 @@ class Main {
     }
 }
 // end of client code
+
+// OUTPUT
+// Preparing ROUND VANILLA cake
+// Cake ready to be served!!
+// __________
+// Preparing ROUND VANILLA cake
+// adding choc toppings...
+// Cake ready to be served!!
+// __________
+// Preparing ROUND VANILLA cup cake
+// Cake ready to be served!!
+// __________
+// Preparing ROUND VANILLA cup cake
+// adding choc toppings...
+// Cake ready to be served!!
+// __________

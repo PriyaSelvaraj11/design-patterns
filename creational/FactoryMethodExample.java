@@ -1,7 +1,6 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+package factoryMethod;
 
+import java.util.*;
 
 interface Vehicle
 {
@@ -55,7 +54,7 @@ class CarVehicleDriver extends VehicleDriver
 }
 
 // start of client code 
-class Main
+public class FactoryMethodExample
 {
 	public static void main (String[] args) throws java.lang.Exception
 	{

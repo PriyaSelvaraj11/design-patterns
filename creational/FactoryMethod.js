@@ -50,3 +50,7 @@ driver = new CarVehicleDriver();
 driver.driveVehicle();
 
 // end of client code 
+
+// OUTPUT
+// driving bus!!!!
+// driving car!!!!

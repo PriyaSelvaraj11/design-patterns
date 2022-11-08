@@ -1,6 +1,4 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+package facade;
 
 class DetergentHolderDispenser {
     int detergentInMl;
@@ -30,7 +28,7 @@ class SpinAction {
     }
 }
 
-// Facade class that hides the 
+// Facade class that hides the internal steps of washing machine 
 class WashingMachine {
     DetergentHolderDispenser detergentHolderDispenser;
     WashingMachine(int detergentInMl) {
@@ -46,7 +44,7 @@ class WashingMachine {
 }
 
 // start of client code
-class Main {
+public class FacadeExample {
     public static void main (String[] args) throws java.lang.Exception
 	{
         WashingMachine washingMachine =  new WashingMachine(10);
@@ -54,3 +52,10 @@ class Main {
     }
 }
 //end of client code
+
+//OUTPUT
+// Dispensing detergent of 10 ml.
+// washing clothes
+// rinsing clothes
+// spinning to remove excess water
+// done..

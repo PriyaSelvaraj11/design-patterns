@@ -1,6 +1,6 @@
+package builder;
+
 import java.util.*;
-import java.lang.*;
-import java.io.*;
 
 enum CakeShape {
     ROUND, SQUARE, RECTANGLE
@@ -78,7 +78,7 @@ class CakeBuilder {
 }
 
 // start of client code 
-class Director {
+public class BuilderExample {
     public static void main (String[] args) throws java.lang.Exception
 	{
         CakeBuilder cakeBuilder = new CakeBuilder();

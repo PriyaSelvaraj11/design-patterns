@@ -35,3 +35,6 @@ console.log(chair.getHeight());
 /**
  * end of client code
  */
+
+// OUTPUT
+// 4.5

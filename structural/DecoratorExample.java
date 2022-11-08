@@ -1,6 +1,4 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+package decorator;
 
 interface Car {
     public void assemble();
@@ -44,7 +42,7 @@ class AutomaticCar extends CarDecorator {
 }
 
 // start of client code
-class Main {
+public class DecoratorExample {
     public static void main (String[] args) throws java.lang.Exception
 	{
         Car hybridCar = new HybridCar(new BasicCar());

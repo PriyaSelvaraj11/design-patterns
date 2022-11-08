@@ -1,6 +1,6 @@
+package abstractFactory;
+
 import java.util.*;
-import java.lang.*;
-import java.io.*;
 
 interface Chair
 {
@@ -80,8 +80,6 @@ class PlasticChairFactory implements ChairFactory
 
 
 // start of client code 
-
-
 class Application {
     private Chair chair;
     private MaterialExpert materialExpert;
@@ -97,17 +95,18 @@ class Application {
     }
 }
 
-class Main
+public class AbstractFactoryExample
 {
 	public static void main (String[] args) throws java.lang.Exception
 	{
+        System.out.println("Enter wood/plastic.. ");
         Scanner reader = new Scanner(System.in); 
 		String input = reader.next();
 		reader.close();
 		
         Application app;
         ChairFactory factory;
-        /**
+        /**wood
         * Factory type is decided during run time
         */
 		if(input.equals("wood")) {
@@ -122,3 +121,9 @@ class Main
 	}
 }
 // end of client code 
+
+// OUTPUT
+// Enter wood/plastic.. 
+// wood
+// wooden chair materials arrived!!
+// wood expert has completed the assembling!!

@@ -1,7 +1,6 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+package flyweight;
 
+import java.util.*;
 
 class Car {
     protected int id;
@@ -72,7 +71,7 @@ class CarDealer {
     }
 }
 // start of client code
-class Main {
+public class FlyweightExample {
     public static void main (String[] args) throws java.lang.Exception
 	{
         CarDealer carDealer = new CarDealer();
@@ -86,3 +85,9 @@ class Main {
     }
 }
 //end of client code
+
+// OUTPUT
+// Delivering car with id: 1 type: suv
+// Delivering car with id: 2 type: suv
+// Delivering car with id: 3 type: suv
+// Delivering car with id: 4 type: sedan

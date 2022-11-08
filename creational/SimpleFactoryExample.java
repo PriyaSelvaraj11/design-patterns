@@ -1,7 +1,4 @@
-import java.util.*;
-import java.lang.*;
-import java.io.*;
-
+import simpleFactory;
 interface Chair
 {
     public int getNumberOfLegs();
@@ -43,7 +40,7 @@ class ChairFactory
 
 
 // start of client code 
-class Main
+public class SimpleFactoryExample
 {
 	public static void main (String[] args) throws java.lang.Exception
 	{
