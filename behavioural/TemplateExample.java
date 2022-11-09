@@ -1,13 +1,13 @@
 package template;
 
 /**
- * Problem : Build a application to construct houses with
+ * PROBLEM : Build a application to construct houses with
  * wooden or glass windows and doors.
  * 
- * Naive solution: Two classes namely wooden and glass house with duplicate
+ * NAIVE SOLUTION: Two classes namely wooden and glass house with duplicate
  * buildBasement and buildWalls methods
  * 
- * Design pattern solution: Define a template(abstract class) for common steps
+ * DESIGN PATTERN BASED SOLUTION: Define a template(abstract class) for common steps
  * and define buildWindows and buildDoor in concrete classes.
  * 
  * Abstract template class - defines the common steps for building houses and

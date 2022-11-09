@@ -1,11 +1,11 @@
 package command;
 
 /**
- * Problem: Build a application which supports save and close actions.
+ * PROBLEM: Build a application which supports save and close actions.
  * The actions can be invoked in different ways -
  * by pressing a button or by shortcut keys in keyboard
  * 
- * Solution: Build Save and Close actions as command classes
+ * SOLUTION: Build Save and Close actions as command classes
  * 
  * Command interface - declares what each concrete command should implement
  * Contrete command class - defines the respective command action

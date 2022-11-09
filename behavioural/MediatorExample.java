@@ -1,12 +1,12 @@
 package mediator;
 
 /**
- * Problem: Build a airport control tower application which
+ * PROBLEM: Build a airport control tower application which
  * manages the communication between all the planes.
  * 
- * Naive solution: Plane objects communicating with each other directly.
+ * NAIVE SOLUTION: Plane objects communicating with each other directly.
  * 
- * Solution with Design pattern: Build a control tower class that receives and
+ * SOLUTION with Design pattern: Build a control tower class that receives and
  * displays the messages from the plane objects in a common portal visible to
  * all planes.
  * 

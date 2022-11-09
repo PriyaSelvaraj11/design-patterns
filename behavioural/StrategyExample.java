@@ -1,12 +1,12 @@
 package strategy;
 
 /**
- * Problem : Build a order creation and payment application which accepts
+ * PROBLEM : Build a order creation and payment application which accepts
  * credit or debit card as mode of payments.
  * 
- * Naive solution: Add all the modes of payments in the main Order class
+ * NAIVE SOLUTION: Add all the modes of payments in the main Order class
  * 
- * Design pattern solution: Define each strategy as a class and
+ * DESIGN PATTERN BASED SOLUTION: Define each strategy as a class and
  * pass the required payment mode object to order class
  * 
  * Strategy interface - declares methods that each strategy should define

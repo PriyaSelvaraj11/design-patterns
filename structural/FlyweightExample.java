@@ -1,7 +1,17 @@
 package flyweight;
 
 import java.util.*;
+/**
+ * PROBLEM: Build a car manufacturing application which builds suv/sedan car types.
+ *          Imagine cartype variable is huge and storing many objects is an expensive operation.
+ * 
+ * SOLUTION: 
+ * Flyweight factory - manages the pool of cartype flyweights. Used for flyweight creation.
+ * Flyweight class - cartype class that is shared amount different car objects.(repeating state)
+ * Context class - maintains unique properties and flyweight instance.
+ */
 
+ // Context class
 class Car {
     protected int id;
     protected CarType carType;
@@ -55,6 +65,7 @@ class CarFactory {
     }
 }
 
+// Client class dealing with cars
 class CarDealer {
     private List<Car> cars = new ArrayList<>();
 

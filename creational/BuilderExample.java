@@ -2,6 +2,16 @@ package builder;
 
 import java.util.*;
 
+/**
+ * PROBLEM: Simulate a cake making machine which creates a cake object based on user preference
+ *          (shape, flavour, toppings)
+ * 
+ * SOLUTION: Add a builder class that takes care of the cake object creation.
+ * 
+ * Builder class - implements different construction steps and returns final object when needed.
+ * Product class - the resultant class that needs to be created
+ * 
+ */
 enum CakeShape {
     ROUND, SQUARE, RECTANGLE
 }
@@ -9,7 +19,7 @@ enum CakeShape {
 enum CakeFlavour {
     CHOCOLATE, VANILLA, STRAWBERRY
 }
-
+// Product class
 class Cake {
     protected CakeShape shape;
     protected CakeFlavour flavour;
@@ -34,12 +44,8 @@ class Cake {
     }
 }
 
-/**
- * The builder patterns is used when construction of a object has
- * multiple steps and it is complex. It is also used to avoid
- * "telescoping constructor"
- **/
 
+// Builder class
 class CakeBuilder {
     protected CakeShape shape;
     protected CakeFlavour flavour;
@@ -86,10 +92,11 @@ class CakeBuilder {
     }
 }
 
-// start of client code
+// start of client code - acts as director
 public class BuilderExample {
     public static void main(String[] args) throws java.lang.Exception {
         CakeBuilder cakeBuilder = new CakeBuilder();
+        // Directs how to build the cake
         Cake cake = cakeBuilder.setShape(CakeShape.ROUND).setFlavour(CakeFlavour.VANILLA).addKitKat().build();
         cake.bake();
     }

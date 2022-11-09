@@ -1,11 +1,11 @@
 /**
- * Problem : There is a existing application which deals with
+ * PROBLEM : There is a existing application which deals with
  * building types - residential , office.
  *
  * Add a new functionality where to display the building details
  * without adding the functionality directly on the classes
  * 
- * Solution: Add a visitor class with a display method for each class
+ * SOLUTION: Add a visitor class with a display method for each class
  * 
  * Concrete class - pre built class with a method to accept visitor
  * Visitor class - serveral versions of the display functionality based on

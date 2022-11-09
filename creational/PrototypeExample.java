@@ -1,5 +1,13 @@
 package prototype;
 
+/**
+ * PROBLEM: Build a cake making machine that builds cake.
+ *          (Assume that cake creation from scratch is a costly operation
+ *          compared to cloning the cake.)
+ * 
+ * SOLUTION: 
+ * clone() method - returns a cake object with current values set.
+ */
 enum CakeShape {
     ROUND, SQUARE, RECTANGLE
 }

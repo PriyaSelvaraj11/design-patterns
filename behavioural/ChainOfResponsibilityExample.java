@@ -1,5 +1,23 @@
 package chainOfResponsibility;
 
+/**
+ * PROBLEM: Build a auth middleware which perform the following steps in order
+ * 1. check username
+ * 2. check password
+ * 3. check role is admin
+ * 
+ * SOLUTION: Build a handler class for each auth step and link the steps through
+ * next step in each step object(form a chain of handlers).
+ * 
+ * Base Handler class - defining the linking logic and declares the abstract
+ * methods
+ * Concrete handler class - executes the step specific logic and
+ * triggeres the next step once completed
+ * Client - manages the linking of steps in order and starts the initial call in
+ * the chain.
+ */
+
+// Base handler class
 abstract class AuthMiddleware {
     public AuthMiddleware next;
 
@@ -23,6 +41,7 @@ abstract class AuthMiddleware {
     }
 }
 
+// Concrete handler 1
 class UsernameAuthMiddleWare extends AuthMiddleware {
     public boolean check(String userName, String password, String role) {
         if (userName == "username") {
@@ -33,6 +52,7 @@ class UsernameAuthMiddleWare extends AuthMiddleware {
     }
 }
 
+// Concrete handler 2
 class PasswordAuthMiddleWare extends AuthMiddleware {
     public boolean check(String userName, String password, String role) {
         if (password == "pass") {
@@ -43,6 +63,7 @@ class PasswordAuthMiddleWare extends AuthMiddleware {
     }
 }
 
+// Concrete handler 3
 class RoleAuthMiddleWare extends AuthMiddleware {
     public boolean check(String userName, String password, String role) {
         if (role == "admin") {
@@ -53,6 +74,7 @@ class RoleAuthMiddleWare extends AuthMiddleware {
     }
 }
 
+// client class
 class Server {
     AuthMiddleware authmiddleware;
 

@@ -1,5 +1,17 @@
 package memento;
 
+/**
+ * PROBLEM: Build a text editor application with enter, backup and restore
+ * backedup text functionality.
+ * 
+ * SOLUTION:
+ * 
+ * Originator class - text editor class that triggers snapshot creation, backup,
+ * restore action on demand
+ * Memento class - creates the snapshot and restores the snapshot
+ * Caretaker class - knows which snapshot to backup/restore.
+ */
+
 // Originator class
 class TextEditor {
     public String text;
@@ -58,6 +70,7 @@ class Command {
     }
 }
 
+// start of client code
 public class MementoExample {
     public static void main(String[] args) throws java.lang.Exception {
         TextEditor textEditor = new TextEditor();
@@ -76,6 +89,7 @@ public class MementoExample {
         textEditor.displayText();
     }
 }
+// end of client code
 
 // OUTPUT
 // Current editor text: 1234

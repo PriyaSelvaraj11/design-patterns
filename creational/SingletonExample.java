@@ -1,5 +1,12 @@
 package singleton;
 
+/**
+ * PROBLEM: Build a government class and a client which accesses the goverment.
+ *          Note: There can be only one government in a country.
+ * 
+ * SOLUTION: Build government as a singleton class
+ */
+
 class GovernmentA {
     private static GovernmentA instance;
     public String presidentName;
@@ -80,3 +87,15 @@ public class SingletonExample {
     }
 }
 // end of client code
+
+// OUTPUT using GovernmentA
+// If you see the same presidentName, then government instance was reused
+// If you see different presidentNames, then 2 instances of government were created
+// Ram
+// Harry
+
+// OUTPUT using GovernmentB
+// If you see the same presidentName, then government instance was reused
+// If you see different presidentNames, then 2 instances of government were created
+// Ram
+// Ram

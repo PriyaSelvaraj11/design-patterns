@@ -1,11 +1,23 @@
 import simpleFactory;
 
+/**
+ * PROBLEM: Build a application that builds chair.
+ * 
+ * SOLUTION: Add a factory method to build the chair from the actual class
+ * 
+ * Product interface - declares methods for concrete product class
+ * Concrete class - defines specific method implementation.
+ * Simple factory class - creates the instance of the chair
+ */
+
+// Product interface
 interface Chair {
     public int getNumberOfLegs();
 
     public float getHeight();
 }
 
+// Concrete class
 class PlasticChair implements Chair {
     protected int numberOfLegs;
     protected float height;

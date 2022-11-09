@@ -1,5 +1,20 @@
 package facade;
 
+/**
+ * PROBLEM: Build a washing machine application which gets detergent, wash,
+ * rinses and spins clothes.
+ * 
+ * NAIVE SOLUTION: The client method calls the list of action methods.
+ * 
+ * DESIGN PATTERN BASED SOLUTION: Facade method which calls the list of action methods
+ * and simplified set of actions to the user.
+ * 
+ * Subsystem class - implements each minor level action
+ * Facade class - knows how to manage various subsystems and exposes simplied
+ * set of actions.
+ */
+
+// Subsystem class 1
 class DetergentHolderDispenser {
     int detergentInMl;
 
@@ -12,18 +27,21 @@ class DetergentHolderDispenser {
     }
 }
 
+// Subsystem class 2
 class WashAction {
     public static void wash() {
         System.out.println("washing clothes");
     }
 }
 
+// Subsystem class 3
 class RinseAction {
     public static void rinse() {
         System.out.println("rinsing clothes");
     }
 }
 
+// Subsystem class 4
 class SpinAction {
     public static void spin() {
         System.out.println("spinning to remove excess water");

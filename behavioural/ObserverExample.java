@@ -3,10 +3,10 @@ package observer;
 import java.util.*;
 
 /**
- * Problem: Build a news publishing application
+ * PROBLEM: Build a news publishing application
  * with publisher notifying all subscribers when each news is published
  * 
- * Solution: Build a Observable news publisher class which holds list of
+ * SOLUTION: Build a Observable news publisher class which holds list of
  * subscribers
  * and notify them when each news is published
  * 

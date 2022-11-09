@@ -2,12 +2,28 @@ package composite;
 
 import java.util.*;
 
+/**
+ * PROBLEM: Build a gadget ordering system which contains different products
+ * like landline, earphone, mobile and packing boxes.
+ * The client can purchase one or more products in one order.
+ * 
+ * SOLUTION:
+ * 
+ * Component interface - product interface
+ * Leaf class - implements component interface and cannot have
+ * sub-components(landline, earphone, mobile)
+ * Composite class - implements component interface and has sub-components
+ * list.(packing box)
+ */
+
+// Component interface
 interface Product {
     public String getDescription();
 
     public int getPrice();
 }
 
+// Component concrete class
 class BaseProduct implements Product {
     protected int price;
     protected String description = "";
@@ -25,7 +41,7 @@ class BaseProduct implements Product {
     }
 }
 
-// composite class which can hold multiple products and act as product class
+// Composite class which can hold multiple products and act as product class
 class PackingBox extends BaseProduct {
     protected List<Product> productList = new ArrayList<Product>();
 
@@ -49,6 +65,7 @@ class PackingBox extends BaseProduct {
     }
 }
 
+// Leaf class 1
 class Earphone extends BaseProduct {
     Earphone(int price) {
         super(price);
@@ -56,6 +73,7 @@ class Earphone extends BaseProduct {
     }
 }
 
+// Leaf class 2
 class Mobile extends BaseProduct {
     Mobile(int price) {
         super(price);
@@ -63,6 +81,7 @@ class Mobile extends BaseProduct {
     }
 }
 
+// Leaf class 3
 class Landline extends BaseProduct {
     Landline(int price) {
         super(price);
@@ -88,3 +107,7 @@ public class CompositeExample {
     }
 }
 // end of client code
+
+// OUTPUT
+// Landline price: 50
+// Packing box total price: 120

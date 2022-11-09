@@ -1,16 +1,16 @@
 package state;
 
 /**
- * Problem: Build a drink dispenser machine with following functionality
+ * PROBLEM: Build a drink dispenser machine with following functionality
  * 1. insert coin
  * 1. dispenses drink when coin is inserted
  * 2. ejects the coin before dispensing the drink.
  * 
- * Naive solution: Adding different methods for each action
+ * NAIVE SOLUTION: Adding different methods for each action
  * with "if..else" condition checks
  * on each state(coin inserted/coin not inserted/drink dispensed)
  * 
- * Solution with Design pattern: Define each state as a class
+ * SOLUTION with Design pattern: Define each state as a class
  * 
  * State interface - declares all the actions which state has to define
  * Concrete state class - defines the action to be performed by the machine on

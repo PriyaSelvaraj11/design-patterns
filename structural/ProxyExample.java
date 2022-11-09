@@ -1,8 +1,17 @@
 import java.util.*;
 
 /**
+ * PROBLEM - Build a system that caches and authenticates get employee details.
  * 
+ * DESIGN PATTERN BASED SOLUTION:
+ * 
+ * Service class - provides the business logic.
+ * Cache proxy class - caches employee details and calls the employee details
+ * service only when needed.
+ * Access control proxy class - checks the passcode and then calls the next
+ * service class(cache proxy class)
  */
+
 class Employee {
     String name;
     int salary;
@@ -13,7 +22,7 @@ class Employee {
     }
 }
 
-// Actual Service
+// Actual Service class
 class EmployeeDetailsService {
     List<Employee> employees;
 

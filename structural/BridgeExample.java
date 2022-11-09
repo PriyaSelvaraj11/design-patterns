@@ -1,5 +1,17 @@
 package bridge;
 
+
+/**
+ * PROBLEM: Build a application which managed turning on and off the TV/Remote.
+ * 
+ * SOLUTION: Build a bridge class, namely remote, which gets device as input and triggers on/off methods when needed.
+ * 
+ * Abstraction class - remote class which triggers different functionality needed
+ * Implementation interface - declares all the needed functionality methods
+ * Concrete implementation class - defines the actual logic of the functionality.
+ */
+
+ // Implementation interface
 interface Device {
     public boolean isEnabled();
 
@@ -7,7 +19,7 @@ interface Device {
 
     public void off();
 }
-
+//Concrete implementation class 1
 class TV implements Device {
     protected boolean isEnabled = false;
 
@@ -25,7 +37,7 @@ class TV implements Device {
         System.out.println("turning off the TV");
     }
 }
-
+// Concrete implementation class 2
 class Radio implements Device {
     protected boolean isEnabled = false;
 
@@ -83,3 +95,9 @@ public class BridgeExample {
     }
 }
 // end of client code
+
+// OUTPUT 
+// turning on the TV
+// turning off the TV
+// turning on the radio
+// turning off the radio

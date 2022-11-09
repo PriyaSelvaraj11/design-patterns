@@ -2,6 +2,25 @@ package iterator;
 
 import java.util.*;
 
+/**
+ * PROBLEM - There exists an application consisting of mobile and earphone
+ * company classes. Mobile company class stores the products as simple array.
+ * Earphone company stores the products as List. Add a new gagdet retailer class
+ * that prints all the products of mobile and earphone company.
+ * 
+ * NAIVE SOLUTION: Iterate through the mobile and earphone company products with
+ * array/List if..else check.
+ * 
+ * DESIGN PATTERN BASED SOLUTION: Add iterator for Mobile and earphone company
+ * class so that gadget retailer class can treat both iteration in a common way
+ * with getNext() and hasNext() methods.
+ * 
+ * Iterator interface - declares methods needed for traversal
+ * Concrete iterator - defines traversal methods.
+ * Client class - traverses the iterator objects.
+ */
+
+// Product class
 class Product {
     public String name;
 
@@ -14,6 +33,7 @@ class Product {
     }
 }
 
+// Iterator interface
 interface ProductIterator {
     public boolean hasNext();
 
@@ -24,6 +44,7 @@ interface ProductCompany extends ProductIterator {
 
 }
 
+// Concrete iterator collection class 1
 class EarphoneCompany implements ProductCompany {
     List<Product> earphones = new ArrayList<Product>();
 
@@ -50,6 +71,7 @@ class EarphoneCompany implements ProductCompany {
     }
 }
 
+// Concrete iterator collection class 1
 class MobileCompany implements ProductCompany {
     Product[] mobiles = new Product[3];
     private int currentPosition = 0;
@@ -76,6 +98,7 @@ class MobileCompany implements ProductCompany {
 
 }
 
+// Client class
 class GadgetRetailer {
     List<ProductCompany> companies = new ArrayList<>();
 

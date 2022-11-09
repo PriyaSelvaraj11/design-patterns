@@ -2,32 +2,52 @@ package abstractFactory;
 
 import java.util.*;
 
+/**
+ * 
+ * PROBLEM: Build a furniture assembling application that creates a chair type
+ * by getting raw materials and assemling with an expert.
+ * 
+ * SOLUTION:
+ * 
+ * Product interface - declares product class methods(Chair, MaterialExpert)
+ * Concrete product class - defines product methods
+ * Factory interface - declares the abstract methods for each factory class
+ * Concrete factory class - creates concrete product objects for each
+ * flavour(Wood factory, Plastic factory)
+ */
+
+// ProductA interface
 interface Chair {
     public void getRawMaterials();
 }
 
+// Concrete productA class 1
 class WoodenChair implements Chair {
     public void getRawMaterials() {
         System.out.println("wooden chair materials arrived!!");
     }
 }
 
+// Concrete productA class 2
 class PlasticChair implements Chair {
     public void getRawMaterials() {
         System.out.println("plastic chair materials arrived!!");
     }
 }
 
+// ProductB interface
 interface MaterialExpert {
     public void assemble();
 }
 
+// Concrete productB class 1
 class WoodenMaterialExpert implements MaterialExpert {
     public void assemble() {
         System.out.println("wood expert has completed the assembling!!");
     }
 }
 
+// Concrete productB class 2
 class PlasticMaterialExpert implements MaterialExpert {
     public void assemble() {
         System.out.println("plastic expert has completed the assembling!!");
@@ -43,10 +63,7 @@ interface ChairFactory {
     public MaterialExpert getMaterialExpert();
 }
 
-/**
- * Specific factory is responsible for creating
- * objects of specfic variety
- */
+// Concrete factory 1
 class WoodenChairFactory implements ChairFactory {
     public Chair getChair() {
         return new WoodenChair();
@@ -57,6 +74,7 @@ class WoodenChairFactory implements ChairFactory {
     }
 }
 
+// Concrete factory 2
 class PlasticChairFactory implements ChairFactory {
     public Chair getChair() {
         return new PlasticChair();

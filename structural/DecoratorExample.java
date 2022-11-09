@@ -1,9 +1,28 @@
 package decorator;
 
+/**
+ * PROBLEM : Build a application that builds car with various features(hybrid
+ * engine, auto gear) w.r.t the client needed.
+ * 
+ * NAIVE SOLUTION : have method constructCar(boolean addHybrid,boolean
+ * addAutogear) with if..else condition in implementation.
+ * 
+ * SOLUTION: Make each feature as wrapper classes of car.
+ * 
+ * Component interface - declares method for both concrete class and wrapper
+ * class
+ * Concrete component class - Base behaviour definition
+ * Base decorator class - Base decorator behaviour definition. Gets and outputs
+ * the component interface.
+ * Concrete decorator class - Specific concrete definition.
+ */
+
+// Component interface
 interface Car {
     public void assemble();
 }
 
+// Concrete component interface
 class BasicCar implements Car {
     public void assemble() {
         System.out.println(" assembling basic car!!!");
@@ -23,6 +42,7 @@ class CarDecorator implements Car {
     }
 }
 
+// Concrete decoraror class 1
 class HybridCar extends CarDecorator {
     HybridCar(Car car) {
         super(car);
@@ -34,6 +54,7 @@ class HybridCar extends CarDecorator {
     }
 }
 
+// Concrete decoraror class 2
 class AutomaticCar extends CarDecorator {
     AutomaticCar(Car car) {
         super(car);
@@ -57,3 +78,11 @@ public class DecoratorExample {
     }
 }
 // end of client code
+
+// OUTPUT
+// assembling basic car!!!
+// adding hybrid engine!!!
+// -------
+// assembling basic car!!!
+// adding hybrid engine!!!
+// adding auto gear!!!
